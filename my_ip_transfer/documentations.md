@@ -5,6 +5,48 @@
 sudo su root
 ```
 
+### Create remote server privet key in a file
+Login remote server:
+```bash
+ssh root@micple.com
+```
+Create ssh privet key:
+```bash
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/local_pc_access_key
+```
+
+Copy ssh public key:
+```bash
+cat ~/.ssh/local_pc_access_key.pub
+```
+copy the full key
+
+Past in the bottom of the `~/.ssh/authorized_keys.` file:
+```bash
+nano ~/.ssh/authorized_keys
+```
+Now copy the privet key to access this server:
+```bash
+cat ~/.ssh/local_pc_access_key
+```
+copy the full output
+
+Exit form remote server:
+```bash
+exit
+```
+
+### Store the copyed remote server ssh key in a foler
+```bash
+nano /var/store/micple_server_keys
+```
+past the copyed ssh key
+
+Now change the file read/write permission
+```bash
+chmod 600 /var/store/micple_server_keys
+```
+
 ### Create Your Script
 ```bash
 sudo nano /usr/local/bin/my_ip_transfer.sh
