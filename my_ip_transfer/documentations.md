@@ -138,6 +138,10 @@ sudo launchctl start com.my_ip_transfer
 ```bash
 sudo launchctl print system/com.my_ip_transfer
 ```
+- **Unload (stop & disable) the service**
+```bash
+sudo launchctl bootout system /Library/LaunchDaemons/com.my_ip_transfer.plist
+```
 
 ### Summary
 - Script is at: `/usr/local/bin/my_ip_transfer.sh`
