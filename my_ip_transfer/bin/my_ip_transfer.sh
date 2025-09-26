@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Run as micple user
+sudo -u micple /opt/homebrew/bin/brew services start jenkins-lts >> /tmp/my_ip_transfer.log 2>&1
+sudo -u micple /opt/homebrew/bin/brew services start nginx >> /tmp/my_ip_transfer.log 2>&1
+
+
+
 remote_user="root"                          # change if needed
 remote_host="micple.com"                    # your remote server IP or domain
 remote_server_pvt_key="/var/store/micple_server_keys"
